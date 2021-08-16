@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Ex41{
+    -String[] names
+}
+
+class ReadingFromFile{
+    -String[] names
+    -BufferedReader read
+
+}
+
+class SortNames{
+    -String[] names
+}
+
+Ex41 -- ReadingFromFile
+Ex41 -- SortNames
+@enduml
