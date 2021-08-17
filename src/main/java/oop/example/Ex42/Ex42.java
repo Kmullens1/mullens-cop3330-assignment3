@@ -4,7 +4,35 @@
  */
 package oop.example.Ex42;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Ex42 {
+
+    public static String[] readUserInput()
+    {
+        String[] names;
+        //Read in the data
+        BufferedReader read = null;
+        try {
+            read = new BufferedReader(new FileReader("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\IntelliJProjects\\mullens-cop3330-assignment3\\src\\main\\java\\oop\\example\\Ex42\\Records"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        for(int i = 0; i < 7; i++) {
+            try {
+                names[i] = read.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return names;
+    }
+
+
     public static void main(String[] args) {
         //Parsing a Data File
         /*Sometimes data comes in as a structured format that you have to break
@@ -35,10 +63,10 @@ public class Ex42 {
             Use spaces to align the columns.
             Make each column one space longer than the longest value in the column.*/
 
-        //Read in the data -> function -> main
-        //Split each line at the commas -> function -> Processing Class
-        //Save each bit of data into an array -> function -> Processing Class
-        //Print array -> function -> main
+
+
+        //Call processData class
+        //print array
 
     }
 }

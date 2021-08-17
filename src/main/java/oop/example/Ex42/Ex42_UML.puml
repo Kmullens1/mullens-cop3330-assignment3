@@ -2,7 +2,21 @@
 'https://plantuml.com/sequence-diagram
 
 class Ex42{
-
+    'Read in the data
+    'Call processData class
+    'print array
+    -String[] names
+    -BufferedReader read
+    +readUserInput()
 }
 
+class processData{
+    'Split each line at the commas
+    'Save each line into an array
+    'return array
+}
+
+Ex42 -- processData
+
 @enduml
+
