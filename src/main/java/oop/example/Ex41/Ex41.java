@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Ex41 {
     private static final Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
     /* Points for:
     Pseudo Code
     Code
@@ -54,7 +54,9 @@ public class Ex41 {
 
         //Sort the Names
         SortNames sort = new SortNames();
-        sort.sortNamesFunction(names);
+        String sortedNames = sort.sortNamesFunction(names);
+
+        System.out.print(sortedNames);
 
     }
 }

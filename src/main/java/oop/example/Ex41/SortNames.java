@@ -8,14 +8,16 @@ import java.util.Arrays;
 
 public class SortNames {
 
-    public void sortNamesFunction(String[] names)
+    public String sortNamesFunction(String[] names)
     {
         Arrays.sort(names);
+        StringBuilder sortedNames = new StringBuilder();
 
-        for(int i = 0; i < names.length; i++)
-        {
-            System.out.println(names[i]);
+        for (String name : names) {
+            sortedNames.append(name).append("\n");
         }
+
+        return sortedNames.toString();
     }
 }
 
