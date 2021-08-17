@@ -10,13 +10,6 @@ public class Ex41 {
     private static final Scanner input = new Scanner(System.in);
 
     public static void main(String[] args){
-    /* Points for:
-    Pseudo Code
-    Code
-    Multiple Classes
-    UML Class Diagrams
-    Test Cases*/
-
 
         //Name Sorter
         /*Alphabetizing the contents of a file, or sorting its contents, is a great way
@@ -48,14 +41,15 @@ public class Ex41 {
 
         System.out.println("Total of 7 names\n-----------------");
 
-        //Read from File
+        //Read from file
         ReadingFromFile accessFile = new ReadingFromFile();
         String[] names = accessFile.accessFile();
 
-        //Sort the Names
+        //Sort the names
         SortNames sort = new SortNames();
         String sortedNames = sort.sortNamesFunction(names);
 
+        //Print out sorted names
         System.out.print(sortedNames);
 
     }

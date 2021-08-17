@@ -26,4 +26,25 @@ class SortNamesTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void sortNamesFunction_Check_Sorting_Ability_With_Another_Name_List() {
+        SortNames sort = new SortNames();
+
+        String expected = """
+                Butts, Charles
+                Ferguson
+                Hassan, Michelle
+                Mullens, Keri
+                Nugent, B
+                Nugent, Katrina
+                Nugent, Marissa
+                """;
+
+        String[] input = {"Nugent, Marissa", "Nugent, Katrina", "Mullens, Keri",
+                "Nugent, B", "Ferguson", "Butts, Charles", "Hassan, Michelle"};
+        String actual = sort.sortNamesFunction(input);
+
+        assertEquals(expected, actual);
+    }
 }

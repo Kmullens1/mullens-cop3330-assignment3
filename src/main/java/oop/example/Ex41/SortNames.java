@@ -10,13 +10,16 @@ public class SortNames {
 
     public String sortNamesFunction(String[] names)
     {
+        //sort the array
         Arrays.sort(names);
-        StringBuilder sortedNames = new StringBuilder();
 
+        //set up array to print properly
+        StringBuilder sortedNames = new StringBuilder();
         for (String name : names) {
             sortedNames.append(name).append("\n");
         }
 
+        //return printable string of the list
         return sortedNames.toString();
     }
 }
