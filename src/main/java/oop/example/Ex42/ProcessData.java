@@ -50,9 +50,50 @@ public class ProcessData {
     //Sort everything into table format
     public void sortIntoTable(ArrayList<String> lastNames, ArrayList<String> firstNames, ArrayList<String> salary)
     {
+        System.out.print("Last     First    Salary\n" +
+                "--------------------------\n");
+
+        int longestLastName = findLongestValues(lastNames);
+        int longestFirstName = findLongestValues(firstNames);
+        int longestSalary = findLongestValues(salary);
+
+        for(int i = 0; i < lastNames.size(); i++)
+        {
+
+            while(lastNames.get(i).length() < longestLastName + 1)
+            {
+                lastNames.set(i, lastNames.get(i) + " ");
+            }
+            System.out.print(lastNames.get(i));
+
+
+
+            while(firstNames.get(i).length() < longestFirstName + 1)
+            {
+                firstNames.set(i, firstNames.get(i) + " ");
+            }
+            System.out.print(firstNames.get(i));
+
+
+
+            while(salary.get(i).length() < longestSalary + 1)
+            {
+                salary.set(i, salary.get(i) + " ");
+            }
+            System.out.print(salary.get(i) + "\n");
+        }
 
     }
 
-     //return array
+    public int findLongestValues(ArrayList<String> values) {
+        int longestValue = 0;
+        for (int j = 0; j < values.size(); j++) {
+            if (longestValue < values.get(j).length()) {
+                longestValue = values.get(j).length();
+            }
+        }
+
+        return longestValue;
+    }
 
 }

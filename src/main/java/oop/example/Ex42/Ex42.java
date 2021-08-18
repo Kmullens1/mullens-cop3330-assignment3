@@ -53,7 +53,7 @@ public class Ex42 {
         Process the records and display the results formatted as a table, evenly spaced, as
         shown in the example output.
         Example Output
-            Last First Salary
+            Last     First    Salary
             --------------------------
             Ling Mai 55900
             Johnson  Jim      56500
