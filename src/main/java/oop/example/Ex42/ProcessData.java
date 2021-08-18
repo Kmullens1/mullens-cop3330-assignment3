@@ -59,28 +59,10 @@ public class ProcessData {
 
         for(int i = 0; i < lastNames.size(); i++)
         {
-
-            while(lastNames.get(i).length() < longestLastName + 1)
-            {
-                lastNames.set(i, lastNames.get(i) + " ");
-            }
-            System.out.print(lastNames.get(i));
-
-
-
-            while(firstNames.get(i).length() < longestFirstName + 1)
-            {
-                firstNames.set(i, firstNames.get(i) + " ");
-            }
-            System.out.print(firstNames.get(i));
-
-
-
-            while(salary.get(i).length() < longestSalary + 1)
-            {
-                salary.set(i, salary.get(i) + " ");
-            }
-            System.out.print(salary.get(i) + "\n");
+            addInSpaces(i, lastNames, longestLastName);
+            addInSpaces(i, firstNames, longestFirstName);
+            addInSpaces(i, salary, longestSalary);
+            System.out.println();
         }
 
     }
@@ -94,6 +76,14 @@ public class ProcessData {
         }
 
         return longestValue;
+    }
+
+    public void addInSpaces(int i, ArrayList<String> lastNames, int longestLength) {
+        while(lastNames.get(i).length() < longestLength + 1)
+        {
+            lastNames.set(i, lastNames.get(i) + " ");
+        }
+        System.out.print(lastNames.get(i));
     }
 
 }

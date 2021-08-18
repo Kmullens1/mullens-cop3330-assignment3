@@ -77,9 +77,6 @@ public class Ex42 {
         //Process the data
         process.splitData(names);
 
-        //print array
-
-
     }
 }
 
