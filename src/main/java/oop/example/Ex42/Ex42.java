@@ -8,12 +8,13 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Ex42 {
 
-    public static String[] readUserInput()
+    public static ArrayList<String> readFile()
     {
-        String[] names;
+        ArrayList<String> names = new ArrayList<>();
         //Read in the data
         BufferedReader read = null;
         try {
@@ -21,9 +22,12 @@ public class Ex42 {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         for(int i = 0; i < 7; i++) {
             try {
-                names[i] = read.readLine();
+                assert read != null;
+                String newName = read.readLine();
+                names.add(newName);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -64,9 +68,17 @@ public class Ex42 {
             Make each column one space longer than the longest value in the column.*/
 
 
+        //Read in the data
+        ArrayList<String> names = readFile();
 
         //Call processData class
+        ProcessData process = new ProcessData();
+
+        //Process the data
+        process.splitData(names);
+
         //print array
+
 
     }
 }
