@@ -57,8 +57,10 @@ public class ProcessData {
     //Sort everything into proper table format and print it out
     public void sortIntoTable(ArrayList<String> lastNames, ArrayList<String> firstNames, ArrayList<String> salary)
     {
-        System.out.print("Last     First    Salary\n" +
-                "--------------------------\n");
+        System.out.print("""
+                Last     First    Salary
+                --------------------------
+                """);
         //Discover the longest value for each column to know how many spaces to add after each entry
         int longestLastName = findLongestValues(lastNames);
         int longestFirstName = findLongestValues(firstNames);
@@ -68,10 +70,11 @@ public class ProcessData {
         for(int i = 0; i < lastNames.size(); i++)
         {
             //Update each ArrayList so that each value has the proper number of spaces after it
-            addInSpaces(i, lastNames, longestLastName);
-            addInSpaces(i, firstNames, longestFirstName);
-            addInSpaces(i, salary, longestSalary);
-            System.out.println();
+            //FIXME - update to print string here instead of in addInSpaces
+            lastNames.set(i, addInSpaces(i, lastNames, longestLastName));
+            firstNames.set(i, addInSpaces(i, firstNames, longestFirstName));
+            salary.set(i, addInSpaces(i, salary, longestSalary));
+            System.out.println(lastNames.get(i) + firstNames.get(i) + salary.get(i));
         }
 
     }
@@ -90,13 +93,13 @@ public class ProcessData {
     }
 
     //Add in the spaces between columns
-    public void addInSpaces(int i, ArrayList<String> values, int longestLength) {
+    public String addInSpaces(int i, ArrayList<String> values, int longestLength) {
         //if the length of the value is less than the longest length + 1, then add a space to the value
         while(values.get(i).length() < longestLength + 1)
         {
             values.set(i, values.get(i) + " ");
         }
-        System.out.print(values.get(i));
+        return values.get(i);
     }
 
 }
