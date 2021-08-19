@@ -23,6 +23,7 @@ public class Ex42 {
             e.printStackTrace();
         }
 
+        //Save each line into an ArrayList
         for(int i = 0; i < 7; i++) {
             try {
                 assert read != null;

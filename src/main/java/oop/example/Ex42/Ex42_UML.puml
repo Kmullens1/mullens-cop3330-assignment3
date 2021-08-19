@@ -10,6 +10,7 @@ class Ex42{
 }
 
 class processData{
+    -ArrayList<String> names
     -ArrayList<String> lastNames
     -ArrayList<String> firstNames
     -ArrayList<String> salary
@@ -23,11 +24,13 @@ class processData{
     -int longestFirstName
     -int longestSalary
     -int longestValue
+    -ArrayList<String> values
+    -int longestLength
 
     +splitData(names)
     +sortIntoTable(lastNames, firstNames, salary)
     +findLongestValues(values)
-    +addInSpaces(i, lastNames, longestLength)
+    +addInSpaces(i, values, longestLength)
 }
 
 Ex42 -- processData
