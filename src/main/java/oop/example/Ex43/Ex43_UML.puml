@@ -2,7 +2,14 @@
 'https://plantuml.com/sequence-diagram
 
 class Ex43{
+    - String siteName
+    - String author
+    - String response
 
+    + readUserInput()
 }
+
+
+
 
 @enduml
