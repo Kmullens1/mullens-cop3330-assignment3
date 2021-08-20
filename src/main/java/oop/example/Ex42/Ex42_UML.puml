@@ -2,35 +2,37 @@
 'https://plantuml.com/sequence-diagram
 
 class Ex42{
-    -String[] names
-    -BufferedReader read
-    -int i
+    - String[] names
+    - BufferedReader read
+    - List<String>[] listOfArrays
+    - List<String> lastNames
+    - List<String> firstNames
+    - List<String> salaries
+    - int longestLastName
+    - int longestFirstName
+    - int longestSalary
 
-    +readUserInput()
+    + readUserInput()
+    + sortIntoTable(names)
 }
 
 class processData{
-    -ArrayList<String> names
-    -ArrayList<String> lastNames
-    -ArrayList<String> firstNames
-    -ArrayList<String> salary
-    -int i
-    -int j
-    -String currentString
-    -String currentLastName
-    -String currentFirstName
-    -String currentSalary
-    -int longestLastName
-    -int longestFirstName
-    -int longestSalary
-    -int longestValue
-    -ArrayList<String> values
-    -int longestLength
+    - ArrayList<String> names
+    - ArrayList<String> lastNames
+    - ArrayList<String> firstNames
+    - ArrayList<String> salaries
+    - String currentString
+    - String currentLastName
+    - String currentFirstName
+    - String currentSalary
+    - int longestValue
+    - int i
+    - ArrayList<String> values
+    - int longestLength
 
-    +splitData(names)
-    +sortIntoTable(lastNames, firstNames, salary)
-    +findLongestValues(values)
-    +addInSpaces(i, values, longestLength)
+    + splitData(names)
+    + findLongestValues(values)
+    + addInSpaces(i, values, longestLength)
 }
 
 Ex42 -- processData

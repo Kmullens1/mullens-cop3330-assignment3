@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Ex42 {
 
@@ -36,6 +37,40 @@ public class Ex42 {
 
         return names;
     }
+
+
+    //Sort everything into proper table format and print it out
+    public static void sortIntoTable(ArrayList<String> names)
+    {
+        ProcessData process = new ProcessData();
+        System.out.print("""
+                Last     First    Salary
+                --------------------------
+                """);
+
+        List<String>[] listOfArrays = process.splitData(names);
+        List<String> lastNames = listOfArrays[0];
+        List<String> firstNames = listOfArrays[1];
+        List<String> salaries = listOfArrays[2];
+
+        //Discover the longest value for each column to know how many spaces to add after each entry
+        int longestLastName = process.findLongestValues(lastNames);
+        int longestFirstName = process.findLongestValues(firstNames);
+        int longestSalary = process.findLongestValues(salaries);
+
+
+        //Cycle through the lastName, firstName, and salary ArrayLists, printing them in order
+        for(int i = 0; i < lastNames.size(); i++)
+        {
+            //Update each ArrayList so that each value has the proper number of spaces after it
+            lastNames.set(i, process.addInSpaces(i, lastNames, longestLastName));
+            firstNames.set(i, process.addInSpaces(i, firstNames, longestFirstName));
+            salaries.set(i, process.addInSpaces(i, salaries, longestSalary));
+            System.out.println(lastNames.get(i) + firstNames.get(i) + salaries.get(i));
+        }
+
+    }
+
 
 
     public static void main(String[] args) {
@@ -72,11 +107,8 @@ public class Ex42 {
         //Read in the data
         ArrayList<String> names = readFile();
 
-        //Call processData class
-        ProcessData process = new ProcessData();
-
-        //Process the data
-        process.splitData(names);
+        //Sort data into a table
+        sortIntoTable(names);
 
     }
 }

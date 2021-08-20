@@ -14,12 +14,6 @@ class ProcessDataTest {
 
     }
 
-    ////Sort Into Table Tests///////////////////////////////////////////////////////////
-    @Test
-    void sortIntoTable() {
-
-    }
-
     ////Find Longest Values Tests///////////////////////////////////////////////////////
     @Test
     void findLongestValues_In_Normal_Circumstances() {
