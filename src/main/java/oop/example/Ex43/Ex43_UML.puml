@@ -4,12 +4,40 @@
 class Ex43{
     - String siteName
     - String author
-    - String response
+    - String responseJava
+    - String responseCSS
 
     + readUserInput()
 }
 
 
+class CreateHTMLFile{
+    - String siteName
+    - String author
+
+    + htmlFile()
+}
+
+class CreateJavaSFolder{
+    - String responseJava
+    - String siteName
+
+    + checkUserResponse()
+    + javaScriptFolder()
+}
+
+class CreateCSSFolder{
+    - String responseCSS
+    - String siteName
+
+    + checkUserResponse()
+    + cssFolder()
+}
+
+
+Ex43 -- CreateJavaSFolder
+Ex43 -- CreateCSSFolder
+Ex43 -- CreateHTMLFile
 
 
 @enduml

@@ -11,36 +11,29 @@ public class Ex43 {
 
     public static void readUserInput() {
 
+        //Ask for the proper user input
         System.out.print("Site name: ");
-        String siteName = input.nextLine();
-
+            String siteName = input.nextLine();
         System.out.print("Author: ");
-        String author = input.nextLine();
-
+            String author = input.nextLine();
         System.out.print("Do you want a folder for JavaScript? ");
-        String response = input.next();
-
-        //FIXME Here print out:
-        //FIXME Created ./awesomeco
-        //FIXME Created ./awesomeco/index.html
-
-
-        createFolders create = new createFolders();
-        //respond to yes or no input from user
-        if(response == "y")
-        {
-            String javaScriptAddress = create.createJavaScriptFolder();
-            System.out.print(javaScriptAddress);
-        }
-
+            String responseJava = input.next();
         System.out.print("Do you want a folder for CSS? ");
-        response = input.next();
-        //respond to yes or no input from user
-        if(response == "y")
-        {
-            String CSSAddress = create.createCSSFolder();
-            System.out.print(CSSAddress);
-        }
+            String responseCSS = input.next();
+        System.out.print("Created ./" + siteName);
+
+        //Create an HTML File with the correct info embedded within
+        CreateHTMLFile html = new CreateHTMLFile();
+        html.htmlFile(siteName, author);
+        System.out.print("Created ./" + siteName + "/index.html");
+
+        CreateJavaSFolder java = new CreateJavaSFolder();
+        //respond to yes or no input from user about Javascript Folder
+        java.checkUserResponse(responseJava, siteName);
+
+        CreateCSSFolder css = new CreateCSSFolder();
+        //respond to yes or no input from user about CSS Folder
+        css.checkUserResponse(responseCSS, siteName);
 
     }
     public static void main(String[] args) {
