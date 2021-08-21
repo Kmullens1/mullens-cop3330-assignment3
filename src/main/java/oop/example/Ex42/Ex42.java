@@ -42,12 +42,14 @@ public class Ex42 {
     //Sort everything into proper table format and print it out
     public static void sortIntoTable(ArrayList<String> names)
     {
+        //Print out initial required text
         ProcessData process = new ProcessData();
         System.out.print("""
                 Last     First    Salary
                 --------------------------
                 """);
 
+        //Split the list of arrays back into singular lists for ease of use
         List<String>[] listOfArrays = process.splitData(names);
         List<String> lastNames = listOfArrays[0];
         List<String> firstNames = listOfArrays[1];

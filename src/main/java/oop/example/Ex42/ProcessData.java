@@ -47,6 +47,8 @@ public class ProcessData {
             firstNames.add(currentFirstName);
             salaries.add(currentSalary);
         }
+
+        //Save everything to a list of Arrays, so they can all be returned from the function
         List<String>[] listOfArrays = new List[3];
         listOfArrays[0] = lastNames;
         listOfArrays[1] = firstNames;

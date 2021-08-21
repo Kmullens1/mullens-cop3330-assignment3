@@ -3,6 +3,8 @@ package oop.example.Ex42;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,8 +12,60 @@ class ProcessDataTest {
 
     ////Split Data Tests////////////////////////////////////////////////////////////////
     @Test
-    void splitData() {
+    void splitData_First_Column_First_Value() {
 
+        ArrayList<String> values = new ArrayList<>();
+        values.add("Mullens,Karen,984564");
+        values.add("Mullens,Lora,255678");
+        values.add("Nugent,Marissa,635355");
+        values.add("Love,Nola,456789");
+
+        String expected = "Mullens";
+
+        ProcessData process = new ProcessData();
+        List<String>[] actualListArray = process.splitData(values);
+        List<String> actualList = actualListArray[0];
+        String actual = actualList.get(0);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void splitData_Second_Column_Second_Value() {
+
+        ArrayList<String> values = new ArrayList<>();
+        values.add("Mullens,Karen,984564");
+        values.add("Mullens,Lora,255678");
+        values.add("Nugent,Marissa,635355");
+        values.add("Love,Nola,456789");
+
+        String expected = "Lora";
+
+        ProcessData process = new ProcessData();
+        List<String>[] actualListArray = process.splitData(values);
+        List<String> actualColumn = actualListArray[1];
+        String actual = actualColumn.get(1);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void splitData_Last_Column_Last_Value() {
+
+        ArrayList<String> values = new ArrayList<>();
+        values.add("Mullens,Karen,984564");
+        values.add("Mullens,Lora,255678");
+        values.add("Nugent,Marissa,635355");
+        values.add("Love,Nola,456789");
+
+        String expected = "456789";
+
+        ProcessData process = new ProcessData();
+        List<String>[] actualListArray = process.splitData(values);
+        List<String> actualColumn = actualListArray[2];
+        String actual = actualColumn.get(3);
+
+        assertEquals(expected, actual);
     }
 
     ////Find Longest Values Tests///////////////////////////////////////////////////////
