@@ -25,7 +25,6 @@ public class Ex43 {
         //Create an HTML File with the correct info embedded within
         CreateHTMLFile html = new CreateHTMLFile();
         html.htmlFile(siteName, author);
-        System.out.print("Created ./" + siteName + "/index.html");
 
         CreateJavaSFolder java = new CreateJavaSFolder();
         //respond to yes or no input from user about Javascript Folder
