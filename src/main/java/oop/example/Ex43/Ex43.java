@@ -20,7 +20,7 @@ public class Ex43 {
             String responseJava = input.next();
         System.out.print("Do you want a folder for CSS? ");
             String responseCSS = input.next();
-        System.out.print("Created ./" + siteName);
+        System.out.println("Created ./" + siteName);
 
         //Create an HTML File with the correct info embedded within
         CreateHTMLFile html = new CreateHTMLFile();

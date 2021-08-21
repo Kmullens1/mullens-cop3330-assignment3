@@ -7,12 +7,10 @@ import java.io.IOException;
 
 public class CreateHTMLFile {
     public void htmlFile(String siteName, String author){
-        File createHTML = new File("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\" +
-                "IntelliJProjects\\mullens-cop3330-assignment3\\src\\main\\java\\oop\\example\\Ex43" +
-                siteName + "\\index\\html");
+        File createHTML = new File("C:\\Users\\kmull\\Desktop\\" + siteName + ".html");
         FileWriter fileWriter = null;
         try {
-            fileWriter = new FileWriter(siteName + "/index.html");
+            fileWriter = new FileWriter(siteName + ".html");
         } catch (IOException e) {
             e.printStackTrace();
         }
