@@ -4,16 +4,20 @@ import java.io.File;
 
 public class CreateCSSFolder {
 
-    public void checkUserResponse(String responseCSS, String siteName)
+
+    public boolean checkUserResponse(String responseCSS)
     {
-        //Check if the user wants a javascript folder to be created
+        //Check if the user wants a css folder to be created
+        boolean bool = false;
         if(responseCSS.equals("y"))
-            CSSFolder(siteName);
+            bool = true;
+
+        return bool;
     }
 
 
 
-    public void CSSFolder(String siteName)
+    public void cssFolder(String siteName)
     {
         //FIXME - .css may not be correct
         File createHTML = new File("C:\\Users\\kmull\\Desktop\\" + siteName + ".css");

@@ -28,11 +28,14 @@ public class Ex43 {
 
         CreateJavaSFolder java = new CreateJavaSFolder();
         //respond to yes or no input from user about Javascript Folder
-        java.checkUserResponse(responseJava, siteName);
+        if(java.checkUserResponse(responseJava))
+            java.javaScriptFolder(siteName);
 
         CreateCSSFolder css = new CreateCSSFolder();
         //respond to yes or no input from user about CSS Folder
-        css.checkUserResponse(responseCSS, siteName);
+        if(css.checkUserResponse(responseCSS))
+            css.cssFolder(siteName);
+
 
     }
     public static void main(String[] args) {

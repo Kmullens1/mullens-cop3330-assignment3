@@ -5,11 +5,14 @@ import java.io.File;
 
 public class CreateJavaSFolder {
 
-    public void checkUserResponse(String responseJava, String siteName)
+    public boolean checkUserResponse(String responseJava)
     {
         //Check if the user wants a javascript folder to be created
+        boolean bool = false;
         if(responseJava.equals("y"))
-            javaScriptFolder(siteName);
+            bool = true;
+
+        return bool;
     }
 
 
