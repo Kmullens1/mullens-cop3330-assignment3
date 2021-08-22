@@ -3,13 +3,15 @@ package oop.example.Ex43;
 import java.io.*;
 
 public class CreateHTMLFile {
-    public void htmlFile(String siteName, String author){
+    public void htmlFile(String siteName, String author)
+    {
+        //FIXME - index.html isn't correct
         File createHTML = new File("C:\\Users\\kmull\\Desktop\\" + siteName + ".html");
         try
         {
             if(createHTML.createNewFile())
             {
-                System.out.print("Created ./" + siteName + "/index.html");
+                System.out.println("Created ./" + siteName + "/index.html");
 
                 BufferedWriter bw = new BufferedWriter(new FileWriter(createHTML));
                 bw.write("<title>" + siteName + "</title><meta>" + author + "</meta>");
