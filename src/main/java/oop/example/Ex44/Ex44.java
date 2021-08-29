@@ -2,7 +2,12 @@
  * UCF COP3330 Summer 2021 Assignment 3 Solution
  * Copyright 2021 Keri Mullens
  */
+
+
 package oop.example.Ex44;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class Ex44 {
     public static void main(String[] args) {
@@ -31,6 +36,11 @@ public class Ex44 {
         Constraints
             The file is in the JSON format. Use a JSON parser to pull the values out of the file.
             If no record is found, prompt again.*/
+
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+
 
     }
 }
