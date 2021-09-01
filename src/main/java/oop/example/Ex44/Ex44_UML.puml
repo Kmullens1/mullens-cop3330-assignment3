@@ -2,7 +2,21 @@
 'https://plantuml.com/sequence-diagram
 
 class Ex44{
+    - Product product
+    - Reader read
 
+    + main()
+    + readFile()
 }
+
+class Product{
+    - String name
+    - double price
+    - int quantity
+
+    + Product()
+}
+
+Ex44 -- Product
 
 @enduml

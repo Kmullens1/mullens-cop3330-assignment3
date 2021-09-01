@@ -4,6 +4,7 @@
 class Ex41{
     -String[] names
     -String sortedNames
+    +main()
 }
 
 class ReadingFromFile{

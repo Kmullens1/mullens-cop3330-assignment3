@@ -16,8 +16,6 @@ public class Ex44 {
 
     public static void readFile()
     {
-        //JsonReader read = new JsonReader("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\IntelliJProjects\\Assignment3\\src\\main\\java\\oop\\example\\Ex44\\Product_Data.json");
-
         try {
             // create Gson instance
             Gson gson = new Gson();

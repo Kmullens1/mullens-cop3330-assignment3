@@ -12,6 +12,7 @@ class Ex42{
     - int longestFirstName
     - int longestSalary
 
+    + main()
     + readUserInput()
     + sortIntoTable(names)
 }
