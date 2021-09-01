@@ -7,10 +7,41 @@
 package oop.example.Ex44;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Ex44 {
+
+    public static void readFile()
+    {
+        //JsonReader read = new JsonReader("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\IntelliJProjects\\Assignment3\\src\\main\\java\\oop\\example\\Ex44\\Product_Data.json");
+
+        try {
+            // create Gson instance
+            Gson gson = new Gson();
+            System.out.println();
+            // create a reader
+            Reader reader = Files.newBufferedReader(Paths.get("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\IntelliJProjects\\Assignment3\\src\\main\\java\\oop\\example\\Ex44\\Product_Data.json"));
+
+            // convert JSON string to User object
+            Product product = gson.fromJson(reader, Product.class);
+
+            // print user object
+            System.out.println(product);
+
+            // close reader
+            reader.close();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
     public static void main(String[] args) {
+
         //Product Search
         /*Pulling data from a file into a complex data structure makes parsing much simpler.
         Many programming languages support the JSON format, a popular way of representing data.
@@ -37,10 +68,15 @@ public class Ex44 {
             The file is in the JSON format. Use a JSON parser to pull the values out of the file.
             If no record is found, prompt again.*/
 
+
+
+        readFile();
+
+        /*
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
         Gson gson = builder.create();
-
+        */
 
     }
 }
