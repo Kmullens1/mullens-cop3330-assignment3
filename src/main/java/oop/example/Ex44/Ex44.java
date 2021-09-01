@@ -21,14 +21,19 @@ public class Ex44 {
             Gson gson = new Gson();
             System.out.println();
             // create a reader
-            Reader reader = Files.newBufferedReader(Paths.get("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\IntelliJProjects\\Assignment3\\src\\main\\java\\oop\\example\\Ex44\\Product_Data.json"));
+            Reader reader = Files.newBufferedReader(Paths.get("src/main/java/oop/example/Ex44/Product_Data.json"));
 
             // convert JSON string to User object
-            Product product = gson.fromJson(reader, Product.class);
+            Inventory product = gson.fromJson(reader, Inventory.class);
 
             // print user object
-            System.out.println(product);
+            System.out.println(product.products.get(0).name);
 
+            for(Product x: product.products)
+            {
+                if(x.name.equals("Widget"))
+                    System.out.print(x.quantity);
+            }
             // close reader
             reader.close();
 

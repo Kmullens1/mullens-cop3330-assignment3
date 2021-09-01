@@ -11,4 +11,9 @@ public class Product {
         this.quantity = quantity;
     }
 
+    public String toString(){
+        return "name: " + this.name + ", price: " + this.price + ", and quantity: " + this.quantity;
+
+    }
+
 }
