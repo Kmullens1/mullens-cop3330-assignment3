@@ -11,11 +11,8 @@ import com.google.gson.Gson;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
 
 public class Ex44 {
-
-    private static final Scanner input = new Scanner(System.in);
 
     public static void readFile()
     {
@@ -30,34 +27,8 @@ public class Ex44 {
             Inventory product = gson.fromJson(reader, Inventory.class);
 
             // print user object
-
-            boolean variable = false;
-            String name = "";
-            double price = -1;
-            int quantity = -1;
-
-            while(!variable) {
-                System.out.print("What is the product name? ");
-                String item = input.nextLine();
-
-                for (Product x : product.products) {
-                    if (x.name.equals(item)) {
-                        variable = true;
-                        name = x.name;
-                        price = x.price;
-                        quantity = x.quantity;
-                    }
-
-                }
-
-                if (variable) {
-                    System.out.print("Name: " + name +
-                            "\nPrice: $" + price +
-                            "\nQuantity on hand: " + quantity);
-                } else
-                    System.out.print("Sorry, that product was not found in our inventory.\n");
-            }
-
+            Parse_Data parse = new Parse_Data();
+            parse.parsing(product);
 
             // close reader
             reader.close();
@@ -97,14 +68,7 @@ public class Ex44 {
             If no record is found, prompt again.*/
 
 
-
         readFile();
-
-        /*
-        GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting();
-        Gson gson = builder.create();
-        */
 
     }
 }
