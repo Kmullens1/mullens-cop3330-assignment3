@@ -11,15 +11,18 @@ import com.google.gson.Gson;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class Ex44 {
+
+    private static final Scanner input = new Scanner(System.in);
 
     public static void readFile()
     {
         try {
             // create Gson instance
             Gson gson = new Gson();
-            System.out.println();
+
             // create a reader
             Reader reader = Files.newBufferedReader(Paths.get("src/main/java/oop/example/Ex44/Product_Data.json"));
 
@@ -27,13 +30,35 @@ public class Ex44 {
             Inventory product = gson.fromJson(reader, Inventory.class);
 
             // print user object
-            System.out.println(product.products.get(0).name);
 
-            for(Product x: product.products)
-            {
-                if(x.name.equals("Widget"))
-                    System.out.print(x.quantity);
+            boolean variable = false;
+            String name = "";
+            double price = -1;
+            int quantity = -1;
+
+            while(!variable) {
+                System.out.print("What is the product name? ");
+                String item = input.nextLine();
+
+                for (Product x : product.products) {
+                    if (x.name.equals(item)) {
+                        variable = true;
+                        name = x.name;
+                        price = x.price;
+                        quantity = x.quantity;
+                    }
+
+                }
+
+                if (variable) {
+                    System.out.print("Name: " + name +
+                            "\nPrice: $" + price +
+                            "\nQuantity on hand: " + quantity);
+                } else
+                    System.out.print("Sorry, that product was not found in our inventory.\n");
             }
+
+
             // close reader
             reader.close();
 
