@@ -17,7 +17,7 @@ public class ReadingFromFile {
         //Access file
         try {
             BufferedReader read =
-                    new BufferedReader (new FileReader("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\IntelliJProjects\\mullens-cop3330-assignment3\\src\\main\\java\\oop\\example\\Ex41\\Names List"));
+                    new BufferedReader (new FileReader("src/main/java/oop/example/Ex41/Names List"));
 
         //copy each line from the file to an array
             for(int i = 0; i < 7; i++)

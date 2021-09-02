@@ -19,7 +19,7 @@ public class Ex42 {
         //Read in the data
         BufferedReader read = null;
         try {
-            read = new BufferedReader(new FileReader("C:\\Users\\kmull\\Desktop\\Keri's OOP Class\\IntelliJProjects\\mullens-cop3330-assignment3\\src\\main\\java\\oop\\example\\Ex42\\Records"));
+            read = new BufferedReader(new FileReader("src/main/java/oop/example/Ex42/Records"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
