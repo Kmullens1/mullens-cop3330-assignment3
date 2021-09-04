@@ -2,10 +2,10 @@ package oop.example.Ex44;
 
 import java.util.List;
 
-public class Inventory {
+public class InventoryList {
     public List<Product> products;
 
-    public Inventory(List<Product> list)
+    public InventoryList(List<Product> list)
     {
         this.products = list;
     }

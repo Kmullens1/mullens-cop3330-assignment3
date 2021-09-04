@@ -17,20 +17,19 @@ public class Ex44 {
     public static void readFile()
     {
         try {
-            // create Gson instance
             Gson gson = new Gson();
 
-            // create a reader
+            //read the json file
             Reader reader = Files.newBufferedReader(Paths.get("src/main/java/oop/example/Ex44/Product_Data.json"));
 
-            // convert JSON string to User object
-            Inventory product = gson.fromJson(reader, Inventory.class);
+            //Convert JSON string into an object
+            InventoryList inventoryList = gson.fromJson(reader, InventoryList.class);
 
-            // print user object
+            //call Parse_Data class to search for and print the desired output
             Parse_Data parse = new Parse_Data();
-            parse.parsing(product);
+            parse.parsing(inventoryList);
 
-            // close reader
+            //close reader
             reader.close();
 
         } catch (Exception ex) {

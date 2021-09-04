@@ -7,7 +7,7 @@ public class Parse_Data {
 
     private static final Scanner input = new Scanner(System.in);
 
-    public void parsing(Inventory product) {
+    public void parsing(InventoryList inventoryList) {
 
         boolean variable = false;
         String name = "";
@@ -18,7 +18,7 @@ public class Parse_Data {
             System.out.print("What is the product name? ");
             String item = input.nextLine();
 
-            for (Product x : product.products) {
+            for (Product x : inventoryList.products) {
                 if (x.name.equals(item)) {
                     variable = true;
                     name = x.name;
