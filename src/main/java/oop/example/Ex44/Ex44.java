@@ -20,17 +20,17 @@ public class Ex44 {
             Gson gson = new Gson();
 
             //read the json file
-            Reader reader = Files.newBufferedReader(Paths.get("src/main/java/oop/example/Ex44/Product_Data.json"));
+            Reader read = Files.newBufferedReader(Paths.get("src/main/java/oop/example/Ex44/Product_Data.json"));
 
             //Convert JSON string into an object
-            InventoryList inventoryList = gson.fromJson(reader, InventoryList.class);
+            InventoryList inventoryList = gson.fromJson(read, InventoryList.class);
 
             //call Parse_Data class to search for and print the desired output
             Parse_Data parse = new Parse_Data();
             parse.parsing(inventoryList);
 
             //close reader
-            reader.close();
+            read.close();
 
         } catch (Exception ex) {
             ex.printStackTrace();

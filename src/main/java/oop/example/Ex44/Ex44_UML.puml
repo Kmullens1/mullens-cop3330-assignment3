@@ -2,21 +2,40 @@
 'https://plantuml.com/sequence-diagram
 
 class Ex44{
-    - Product product
     - Reader read
+    - InventoryList inventoryList
 
     + main()
     + readFile()
 }
 
-class Product{
-    - String name
-    - double price
-    - int quantity
+class InventoryList{
+    +List<Product> products
 
-    + Product()
+    +InventoryList(List<Product> list)
 }
 
-Ex44 -- Product
+class Product{
+    + String name;
+    + double price;
+    + int quantity;
+
+    +Product(String name, double price, int quantity)
+}
+
+Class Parse_Data{
+     - boolean variable
+     - String name
+     - double price
+     - int quantity
+     - String item
+
+    + void parsing(InventoryList inventoryList)
+    - void output(boolean variable, String name, double price, int quantity)
+}
+
+Ex44 -- InventoryList
+Ex44 -- Parse_Data
+InventoryList -- Product
 
 @enduml
