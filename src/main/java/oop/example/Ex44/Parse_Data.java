@@ -1,22 +1,23 @@
 package oop.example.Ex44;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Parse_Data {
 
     private static final Scanner input = new Scanner(System.in);
 
-    public void parsing(InventoryList inventoryList) {
+    public ArrayList<Object> parsing(InventoryList inventoryList) {
 
         boolean variable = false;
         String name = "";
         double price = -1;
         int quantity = -1;
+        ArrayList<Object> data = new ArrayList<>();
 
         while (!variable) {
-            System.out.print("What is the product name? ");
-            String item = input.nextLine();
+            String item = readProductName();
 
             for (Product x : inventoryList.products) {
                 if (x.name.equals(item)) {
@@ -26,8 +27,22 @@ public class Parse_Data {
                     quantity = x.quantity;
                 }
             }
+
+            //Add product data to a list for testing purposes
+            data.add(name);
+            data.add(price);
+            data.add(quantity);
+
             output(variable, name, price, quantity);
         }
+
+        return data;
+    }
+
+    private String readProductName()
+    {
+        System.out.print("What is the product name? ");
+        return input.nextLine();
     }
 
 

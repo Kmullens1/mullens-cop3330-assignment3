@@ -8,7 +8,9 @@ class Parse_DataTest {
 
     @Test
     void parsing() {
+    Parse_Data parse = new Parse_Data();
 
+    parse
 
     }
 }

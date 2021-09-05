@@ -29,8 +29,10 @@ Class Parse_Data{
      - double price
      - int quantity
      - String item
+     - List<String>
 
     + void parsing(InventoryList inventoryList)
+    - String readProductName()
     - void output(boolean variable, String name, double price, int quantity)
 }
 
