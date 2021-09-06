@@ -31,7 +31,7 @@ public class Parse_Data {
 
     }
 
-    private ArrayList<Object> searchProducts(InventoryList inventoryList, String item)
+    public ArrayList<Object> searchProducts(InventoryList inventoryList, String item)
     {
         ArrayList<Object> data = new ArrayList<>();
 

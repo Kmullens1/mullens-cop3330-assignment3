@@ -31,9 +31,9 @@ Class Parse_Data{
      - String item
      - List<String>
 
-    + void parsing(InventoryList inventoryList)
-    - String readProductName()
-    - void output(boolean variable, String name, double price, int quantity)
+    + void parsing(inventoryList)
+    + ArrayList<Object> searchProducts(inventoryList, item)
+    - void output(variable, name, price, quantity)
 }
 
 Ex44 -- InventoryList
