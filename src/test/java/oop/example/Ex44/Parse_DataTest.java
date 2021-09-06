@@ -10,7 +10,6 @@ class Parse_DataTest {
     void parsing() {
     Parse_Data parse = new Parse_Data();
 
-    parse
 
     }
 }
