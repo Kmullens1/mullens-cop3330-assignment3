@@ -5,6 +5,7 @@ public class Product {
     public double price;
     public int quantity;
 
+    //create a Product object with name, price and quantity attributes
     public Product(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
