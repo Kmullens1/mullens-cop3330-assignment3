@@ -21,5 +21,25 @@ public class Ex45 {
         Constraints
             Prompt for the name of the output file.
             Write the output to a new file.*/
+
+
+
+        //Ask for the file that needs to be read
+        //Read the file
+        //Save file contents as a string
+        //Call String changeToUse(String fileContents) function
+
+            //Search for occurrences of the word "utilize" (for loop)
+            //Replace "utilize" with "use"
+            //Return new String
+
+        //Ask for the name of the output file
+        //Read user input
+        //Call createNewFile class
+
+            //Write the output to a new file with the name provided by user
+            //Return name of file or no test necessary??
+
+
     }
 }
