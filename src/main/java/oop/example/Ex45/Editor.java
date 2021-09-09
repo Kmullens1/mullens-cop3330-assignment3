@@ -5,9 +5,18 @@ public class Editor {
 
         //Search for occurrences of the word "utilize" (for loop)
         //Replace "utilize" with "use"
+        String updatedContents = "Error";
+        if(fileContents != null)
+        {
+            updatedContents = fileContents.replace("utilize", "use");
+            updatedContents = updatedContents.replace("Utilize", "Use");
+        }
+
+
+        //FIXME - Remove this print statement later
+        System.out.println(updatedContents);
+
         //Return new String
-
-
-        return null;
+        return updatedContents;
     }
 }
