@@ -1,8 +1,18 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-class Ex45{
+class Ex45 {
 
 }
 
+class Editor {
+
+}
+
+class CreateNewFile {
+
+}
+
+Ex45 -- Editor
+Ex45 -- CreateNewFile
 @enduml
