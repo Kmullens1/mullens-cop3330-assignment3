@@ -42,7 +42,7 @@ public class Ex45 {
         String updatedContents = edit.changeToUse(fileContents);
 
         //Ask for the name of the output file
-        System.out.print("Where do you want to save the edited file. Input the exact file location: ");
+        System.out.print("Where do you want to save the edited file?\nInput the exact file location: ");
         //You can input this path for testing purposes: src/main/java/oop/example/Ex45/UtilizeFile.txt
         //Read user input
         String outputFileName = input.nextLine();
