@@ -4,7 +4,43 @@
 */
 package oop.example.Ex46;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Ex46 {
+    private static final Scanner input = new Scanner(System.in);
+
+    public static void readInput() {
+        //Ask for the file that needs to be read
+        System.out.print("What is the exact address location of the file you want to analyze: ");
+        String fileLocation = input.nextLine();
+
+        //Read the file
+        BufferedReader read = null;
+        try {
+            read = new BufferedReader(new FileReader(fileLocation));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        //Save file contents as a string
+        String fileContents = null;
+        try {
+            assert read != null;
+            fileContents = read.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //Call wordCounter function from AnalyzeFile class
+        AnalyzeFile analyze = new AnalyzeFile();
+        analyze.wordCounter(fileContents);
+
+    }
+
     public static void main(String[] args) {
         //Word Frequency Finder
         /*Knowing how often a word appears in a sentence or block of text is helpful for
@@ -23,5 +59,7 @@ public class Ex46 {
         Constraint
             Ensure that the most used word is at the top of the report and the least used words
             are at the bottom.*/
+
+        readInput();
     }
 }
