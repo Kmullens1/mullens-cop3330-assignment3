@@ -2,15 +2,29 @@
 'https://plantuml.com/sequence-diagram
 
 class Ex45 {
+    - String fileLocation
+    - BufferedReader read
+    - String fileContents
+    - String outputFileName
+    - String updatedContents
 
+    + main()
+    + readInput()
 }
 
 class Editor {
+    - String fileContents
+    - String updatedContents
+
+    + changeToUse(String fileContents)
 
 }
 
 class CreateNewFile {
+    - String outputFileName
+    - String updatedContents
 
+    + newFile(String outputFileName, String updatedContents)
 }
 
 Ex45 -- Editor

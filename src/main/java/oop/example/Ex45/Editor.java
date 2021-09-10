@@ -12,10 +12,6 @@ public class Editor {
             updatedContents = updatedContents.replace("Utilize", "Use");
         }
 
-
-        //FIXME - Remove this print statement later
-        System.out.println(updatedContents);
-
         //Return new String
         return updatedContents;
     }

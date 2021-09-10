@@ -39,7 +39,7 @@ public class Ex45 {
 
         //Call changeToUse function from Editor class
         Editor edit = new Editor();
-        edit.changeToUse(fileContents);
+        String updatedContents = edit.changeToUse(fileContents);
 
         //Ask for the name of the output file
         System.out.print("Where do you want to save the edited file. Input the exact file location: ");
@@ -49,7 +49,7 @@ public class Ex45 {
 
         //Call newFile function from CreateNewFile class
         CreateNewFile create = new CreateNewFile();
-        create.newFile(outputFileName);
+        create.newFile(outputFileName, updatedContents);
     }
 
     public static void main(String[] args) {
