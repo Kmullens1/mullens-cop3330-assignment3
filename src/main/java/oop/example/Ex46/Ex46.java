@@ -16,6 +16,7 @@ public class Ex46 {
     public static void readInput() {
         //Ask for the file that needs to be read
         System.out.print("What is the exact address location of the file you want to analyze: ");
+        //Input this address for testing purposes: src/main/java/oop/example/Ex46/BadgerFile.txt
         String fileLocation = input.nextLine();
 
         //Read the file

@@ -11,7 +11,7 @@ public class AnalyzeFile {
                 //Contains: badger badger badger badger mushroom mushroom snake badger badger badger
 
         //Create an ArrayList of each unique word
-        ArrayList<String> OccurringWords = new ArrayList();
+        ArrayList<String> OccurringWords = new ArrayList<String>();
         OccurringWords.add(arrayOfContents[0]);
         for(int i = 0; i < arrayOfContents.length; i++)
         {
@@ -24,19 +24,20 @@ public class AnalyzeFile {
 
 
         int wordCount = 0;
-        ArrayList<String> row = new ArrayList();
+        ArrayList<String> count = new ArrayList<String>();
 
 
-        //Compare each string and count the occurrences of each
-        for(int i = 0; i < OccurringWords.length; i++)
+        //Count the times that each word in the OccurringWords list appears in the fileContents
+        for(int i = 0; i < OccurringWords.size(); i++)
         {
-            row.add(OccurringWords[i]);
-            for(int j = 0; j < OccurringWords.length; j++)
+            //row.add(OccurringWords.get(i));
+            for(int j = 0; j < arrayOfContents.length; j++)
             {
-                if(OccurringWords[i].equals(OccurringWords[j]))
+                if(OccurringWords.get(i).equals(arrayOfContents[j]))
                     wordCount++;
-
             }
+            count.add(String.valueOf(wordCount));
+            System.out.println(OccurringWords.get(i) + ": " + wordCount);
         }
 
         //Create a list of lists with each string and its respective count
