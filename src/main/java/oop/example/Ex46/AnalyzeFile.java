@@ -12,6 +12,7 @@ public class AnalyzeFile {
 
         //Create an ArrayList of each unique word
         ArrayList<String> OccurringWords = new ArrayList<String>();
+
         OccurringWords.add(arrayOfContents[0]);
 
         for(int i = 0; i < arrayOfContents.length; i++)
@@ -19,17 +20,12 @@ public class AnalyzeFile {
             boolean matchIndicator = false;
             for(int j = 0; j < OccurringWords.size(); j++)
             {
-                if(arrayOfContents[i].equals(OccurringWords.get(j))) {
+                if(arrayOfContents[i].equals(OccurringWords.get(j)))
                     matchIndicator = true;
-                }
-                if(!matchIndicator) {
+
+                if(!matchIndicator)
                     OccurringWords.add(arrayOfContents[i]);
-                }
-                //FIXME - Remove print statement eventually
-                System.out.println(OccurringWords.get(j));
             }
-            //FIXME - Remove print statement eventually
-            System.out.println(OccurringWords.size());
         }
 
 
