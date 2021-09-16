@@ -4,52 +4,69 @@ import java.util.ArrayList;
 
 public class AnalyzeFile {
 
-    String wordCounter(String fileContents) {
+    public ArrayList<String> wordList(String fileContents) {
 
         //Split fileContents into an array of strings
         String[] arrayOfContents = fileContents.split(" ");
                 //Contains: badger badger badger badger mushroom mushroom snake badger badger badger
 
         //Create an ArrayList of each unique word
-        ArrayList<String> OccurringWords = new ArrayList<String>();
+        ArrayList<String> occurringWords = new ArrayList<String>();
 
-        OccurringWords.add(arrayOfContents[0]);
+        occurringWords.add(arrayOfContents[0]);
 
         for(int i = 0; i < arrayOfContents.length; i++)
         {
             boolean matchIndicator = false;
-            for(int j = 0; j < OccurringWords.size(); j++)
+            for(int j = 0; j < occurringWords.size(); j++)
             {
-                if(arrayOfContents[i].equals(OccurringWords.get(j)))
+                if(arrayOfContents[i].equals(occurringWords.get(j)))
                     matchIndicator = true;
-
-                if(!matchIndicator)
-                    OccurringWords.add(arrayOfContents[i]);
             }
+            if(!matchIndicator)
+                occurringWords.add(arrayOfContents[i]);
         }
 
+        ArrayList<Integer> wordCount = wordCounter(arrayOfContents, occurringWords);
+        output(occurringWords, wordCount);
 
-        int wordCount = 0;
-        ArrayList<String> count = new ArrayList<String>();
+        return occurringWords;
+    }
 
+    public ArrayList<Integer> wordCounter(String[] arrayOfContents, ArrayList<String> occurringWords)
+    {
+        ArrayList<Integer> wordCount = new ArrayList<Integer>();
 
-        //Count the times that each word in the OccurringWords list appears in the fileContents
-        for(int i = 0; i < OccurringWords.size(); i++)
+        //Count the times that each word in the occurringWords list appears in the fileContents
+        for(int i = 0; i < occurringWords.size(); i++)
         {
-            //row.add(OccurringWords.get(i));
+            int count = 0;
+
             for(int j = 0; j < arrayOfContents.length; j++)
             {
-                if(OccurringWords.get(i).equals(arrayOfContents[j]))
-                    wordCount++;
+                if(occurringWords.get(i).equals(arrayOfContents[j]))
+                    count++;
             }
-            count.add(String.valueOf(wordCount));
-            System.out.println(OccurringWords.get(i) + ": " + wordCount);
+            wordCount.add(count);
         }
 
-        //Create a list of lists with each string and its respective count
+        //Create a list of lists with each string and its respective wordCount
         //Return object
 
-        //FIXME: Ultimately should not return null
-        return null;
+        return wordCount;
+    }
+
+    private void output(ArrayList<String> occurringWords, ArrayList<Integer> wordCount)
+    {
+        for(int i = 0; i < occurringWords.size(); i++)
+        {
+            System.out.print(occurringWords.get(i) + ": ");
+
+            for(int j = 0; j < wordCount.get(i); j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }

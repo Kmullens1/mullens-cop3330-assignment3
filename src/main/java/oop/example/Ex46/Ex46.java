@@ -38,7 +38,7 @@ public class Ex46 {
 
         //Call wordCounter function from AnalyzeFile class
         AnalyzeFile analyze = new AnalyzeFile();
-        analyze.wordCounter(fileContents);
+        analyze.wordList(fileContents);
 
     }
 
