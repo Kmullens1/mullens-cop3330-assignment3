@@ -28,24 +28,32 @@ public class AnalyzeFile {
                 occurringWords.add(arrayOfContents[i]);
         }
 
-        ArrayList<Object> info = wordCounter(arrayOfContents, occurringWords);
+        ArrayList<Integer> wordCount = wordCounter(arrayOfContents, occurringWords);
 
-        ArrayList<String> occurringWords2 = new ArrayList<>();
-        occurringWords2.add((String) info.get(0));
-        ArrayList<Integer> wordCount = new ArrayList<>();
-        wordCount.add((Integer) info.get(1));
 
-        for(int i = 0; i < wordCount.size(); i++)
+        ArrayList<Object> info = sortWordCount(wordCount, occurringWords);
+
+        ArrayList<Object> occurringWords2 = new ArrayList<>();
+        occurringWords2.add(info.get(0));
+        ArrayList<Object> wordCount2 = new ArrayList<>();
+        wordCount2.add(info.get(1));
+
+        /*for(int i = 0; i < occurringWords.size(); i++)
         {
             occurringWords.set(i, occurringWords2.get(i));
         }
+
+        for(int i = 0; i < wordCount.size(); i++)
+        {
+            wordCount.set(i, (Integer) wordCount2.get(i));
+        }*/
 
         output(occurringWords, wordCount);
 
         return occurringWords;
     }
 
-    public ArrayList<Object> wordCounter(String[] arrayOfContents, ArrayList<String> occurringWords)
+    public ArrayList<Integer> wordCounter(String[] arrayOfContents, ArrayList<String> occurringWords)
     {
         ArrayList<Integer> wordCount = new ArrayList<>();
 
@@ -67,20 +75,7 @@ public class AnalyzeFile {
         //Return object
 
 
-        /*
-        ArrayList<String> occurringWords2 = new ArrayList<>();
-        occurringWords2.add((String) info.get(0));
-        ArrayList<Integer> wordCount2 = new ArrayList<>();
-        wordCount2.add((Integer) info.get(1));
-
-        for(int i = 0; i < wordCount.size(); i++)
-        {
-            wordCount.set(i, wordCount2.get(i));
-            occurringWords.set(i, occurringWords2.get(i));
-        }
-        */
-
-        return sortWordCount(wordCount, occurringWords);
+        return wordCount;
     }
 
     private void output(ArrayList<String> occurringWords, ArrayList<Integer> wordCount)
@@ -116,7 +111,6 @@ public class AnalyzeFile {
             }
         }
 
-        System.out.print(wordCount);
 
         ArrayList<Object> info = new ArrayList<>();
         info.add(occurringWords);
