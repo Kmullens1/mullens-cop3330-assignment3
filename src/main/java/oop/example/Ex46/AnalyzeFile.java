@@ -33,20 +33,22 @@ public class AnalyzeFile {
 
         ArrayList<Object> info = sortWordCount(wordCount, occurringWords);
 
-        ArrayList<Object> occurringWords2 = new ArrayList<>();
-        occurringWords2.add(info.get(0));
-        ArrayList<Object> wordCount2 = new ArrayList<>();
-        wordCount2.add(info.get(1));
+        ArrayList<ArrayList<String>> occurringWords2 = new ArrayList<ArrayList<String>>();
+        occurringWords2.add((ArrayList<String>) info.get(0));
+        ArrayList<ArrayList<Integer>> wordCount2 = new ArrayList<ArrayList<Integer>>();
+        wordCount2.add((ArrayList<Integer>) info.get(1));
 
-        /*for(int i = 0; i < occurringWords.size(); i++)
+
+        for(int i = 0; i < occurringWords.size(); i++)
         {
-            occurringWords.set(i, occurringWords2.get(i));
+            occurringWords.set(i, occurringWords2.get(0).get(i));
         }
 
         for(int i = 0; i < wordCount.size(); i++)
         {
-            wordCount.set(i, (Integer) wordCount2.get(i));
-        }*/
+            wordCount.set(i, wordCount2.get(0).get(i));
+        }
+
 
         output(occurringWords, wordCount);
 
@@ -58,14 +60,12 @@ public class AnalyzeFile {
         ArrayList<Integer> wordCount = new ArrayList<>();
 
         //Count the times that each word in the occurringWords list appears in the fileContents
-        for(int i = 0; i < occurringWords.size(); i++)
-        {
+        for (String occurringWord : occurringWords) {
 
             int count = 0;
 
-            for(int j = 0; j < arrayOfContents.length; j++)
-            {
-                if(occurringWords.get(i).equals(arrayOfContents[j]))
+            for (String arrayOfContent : arrayOfContents) {
+                if (occurringWord.equals(arrayOfContent))
                     count++;
             }
             wordCount.add(count);
