@@ -23,7 +23,9 @@ public class Ex46 {
         BufferedReader read = null;
         try {
             read = new BufferedReader(new FileReader(fileLocation));
-        } catch (FileNotFoundException e) {
+        }
+        //Print error message if reading file fails
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -32,7 +34,9 @@ public class Ex46 {
         try {
             assert read != null;
             fileContents = read.readLine();
-        } catch (IOException e) {
+        }
+        //Print error message if reading the line fails
+        catch (IOException e) {
             e.printStackTrace();
         }
 

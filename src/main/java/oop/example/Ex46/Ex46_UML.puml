@@ -2,13 +2,29 @@
 'https://plantuml.com/sequence-diagram
 
 class Ex46{
+    - String fileLocation
+    - BufferedReader read
+    - String fileContents
 
     + readInput();
     + main()
 }
 
 class AnalyzeFile{
+    - String fileContents
+    - String[] arrayOfContents
+    - ArrayList<String> occurringWords
+    - boolean matchIndicator
+    - ArrayList<Integer> wordCount
+    - ArrayList<Object> info
+    - ArrayList<ArrayList<String>> occurringWords2
+    - ArrayList<ArrayList<Integer>> wordCount2
+    - String tempString
 
+    + ArrayList<String> wordList(fileContents)
+    + ArrayList<Integer> wordCounter(arrayOfContents, occurringWords)
+    - void output(occurringWords, wordCount)
+    - ArrayList<Object> sortWordCount(wordCount, occurringWords)
 }
 
 Ex46 -- AnalyzeFile
