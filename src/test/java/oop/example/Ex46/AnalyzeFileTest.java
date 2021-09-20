@@ -163,5 +163,6 @@ class AnalyzeFileTest {
         ArrayList<Object> actual = analyze.sortWordCount(wordCount, occurringWords);
 
         assertEquals(expected, actual);
+
     }
 }
