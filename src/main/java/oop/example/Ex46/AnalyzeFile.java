@@ -11,26 +11,25 @@ public class AnalyzeFile {
                 //Contains: badger badger badger badger mushroom mushroom snake badger badger badger
 
         //Create an ArrayList of each unique word
-        ArrayList<String> occurringWords = new ArrayList<String>();
+        ArrayList<String> occurringWords = new ArrayList<>();
 
         //Add the 1st word from fileContents into the occurringWords ArrayList
         occurringWords.add(arrayOfContents[0]);
 
         //Cycle through all the words in fileContents to list every word that appears
-        for(int i = 0; i < arrayOfContents.length; i++)
-        {
+        for (String arrayOfContent : arrayOfContents) {
             boolean matchIndicator = false;
             //Check if the current word is already in the occurringWords list
-            for(int j = 0; j < occurringWords.size(); j++)
-            {
+            for (String occurringWord : occurringWords) {
                 //If any of the words in the occurringWords list match the current word, change matchIndicator to true
-                if (arrayOfContents[i].equals(occurringWords.get(j))) {
+                if (arrayOfContent.equals(occurringWord)) {
                     matchIndicator = true;
+                    break;
                 }
             }
             //If no matches were found, add current word to the list
-            if(!matchIndicator)
-                occurringWords.add(arrayOfContents[i]);
+            if (!matchIndicator)
+                occurringWords.add(arrayOfContent);
         }
 
         //Call wordCounter function to count how many times each occurring word appears
@@ -40,9 +39,9 @@ public class AnalyzeFile {
         ArrayList<Object> info = sortWordCount(wordCount, occurringWords);
 
         //Convert wordCount and occurringWords lists into more accessible list type
-        ArrayList<ArrayList<String>> occurringWords2 = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> occurringWords2 = new ArrayList<>();
         occurringWords2.add((ArrayList<String>) info.get(0));
-        ArrayList<ArrayList<Integer>> wordCount2 = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> wordCount2 = new ArrayList<>();
         wordCount2.add((ArrayList<Integer>) info.get(1));
 
 
