@@ -85,22 +85,7 @@ public class AnalyzeFile {
         return wordCount;
     }
 
-    private void output(ArrayList<String> occurringWords, ArrayList<Integer> wordCount)
-    {
-        //Cycle through occurringWords and wordCount lists to print each value in the correct location
-        for(int i = 0; i < occurringWords.size(); i++)
-        {
-            System.out.print(occurringWords.get(i) + ": ");
-
-            for(int j = 0; j < wordCount.get(i); j++)
-            {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
-
-    private ArrayList<Object> sortWordCount(ArrayList<Integer> wordCount, ArrayList<String> occurringWords) {
+    public ArrayList<Object> sortWordCount(ArrayList<Integer> wordCount, ArrayList<String> occurringWords) {
         //check frequency of each word and sort the highest frequency words to the beginning of the list
         for(int i = 0; i < wordCount.size() - 1; i++)
         {
@@ -128,4 +113,20 @@ public class AnalyzeFile {
 
         return info;
     }
+
+    private void output(ArrayList<String> occurringWords, ArrayList<Integer> wordCount)
+    {
+        //Cycle through occurringWords and wordCount lists to print each value in the correct location
+        for(int i = 0; i < occurringWords.size(); i++)
+        {
+            System.out.print(occurringWords.get(i) + ": ");
+
+            for(int j = 0; j < wordCount.get(i); j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
 }
